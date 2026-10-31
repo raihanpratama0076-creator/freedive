@@ -50,7 +50,7 @@ export const FAQS: Faq[] = [
       "Keselamatan mengesampingkan semua jadwal. Jika angin, gelombang, atau visibilitas membuat kondisi tidak aman, kami menjadwal ulang selammu ke slot berikutnya atau pengembalian dana penuh — pilihanmu. Keputusan dibuat oleh dive leader kami di lokasi.",
   },
   {
-    question: "Bagaimana cara bergabung dengan Blue Abyss Club?",
+    question: "Bagaimana cara bergabung dengan EVERY DIVE ?",
     answer:
       "Mudah — klik Bergabung dengan Komunitas atau daftar ke acara apapun. Keanggotaan gratis dan menghubungkanmu ke pertemuan bulanan kami, diskon trip, kegiatan konservasi, dan komunitas yang benar-benar mencintai laut. Semua orang disambut, dari pemula hingga freediver berpengalaman.",
   },

@@ -60,7 +60,7 @@ export function HeroSection() {
       ref={ref}
       id="home"
       className="relative flex min-h-[100svh] items-center overflow-hidden"
-      aria-label="Blue Abyss Club — masuki kedalaman biru"
+      aria-label="EVERY DIVE  — masuki kedalaman biru"
     >
       {/* ── Layer 1: cinematic photo, slowest ── */}
       <motion.div

@@ -108,7 +108,7 @@ export function Footer() {
               </span>
               <span className="font-display leading-none">
                 <span className="block text-base font-bold tracking-[0.22em] text-foam-50">
-                  BLUE ABYSS
+                  EVERY DIVE
                 </span>
                 <span className="mt-1 block text-[9px] font-semibold tracking-[0.5em] text-lagoon-300/90">
                   FREEDIVING · BAC
@@ -253,7 +253,7 @@ export function Footer() {
         {/* bottom bar */}
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-foam-50/8 pt-7 sm:flex-row">
           <p className="text-xs text-foam-100/45">
-            © {new Date().getFullYear()} Blue Abyss Club. Website demo — kursus,
+            © {new Date().getFullYear()} EVERY DIVE . Website demo — kursus,
             harga, acara, dan stok adalah data contoh.
           </p>
           <div className="flex items-center gap-6 text-xs">

@@ -4,7 +4,7 @@ const sharp = require('sharp');
 async function main() {
   const f1 = fs.readFileSync('public/images/photos/f_1.png').toString('base64');
   const bac = fs.readFileSync('public/images/photos/BAC.jpeg').toString('base64');
-  
+
   const html = `<!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +21,7 @@ async function main() {
     <div class="box"><img src="data:image/png;base64,${f1}" /></div>
     <span>·</span>
     <div class="box"><img src="data:image/jpeg;base64,${bac}" /></div>
-    <div><strong>BLUE ABYSS</strong><div style="font-size:9px;color:#56d3c8">FREEDIVING · BAC</div></div>
+    <div><strong>EVERY DIVE</strong><div style="font-size:9px;color:#56d3c8">FREEDIVING · BAC</div></div>
   </div>
 </body>
 </html>`;

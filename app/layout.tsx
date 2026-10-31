@@ -16,30 +16,30 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "BLUE ABYSS CLUB — Selami Batasmu",
+  title: "EVERY DIVE  — Selami Batasmu",
   description:
-    "Belajar freediving, temukan peralatanmu, dan bergabung dengan komunitas yang hidup untuk laut. Kursus freediving premium, penjualan & sewa peralatan, ekspedisi dan konservasi laut oleh Blue Abyss Club.",
+    "Belajar freediving, temukan peralatanmu, dan bergabung dengan komunitas yang hidup untuk laut. Kursus freediving premium, penjualan & sewa peralatan, ekspedisi dan konservasi laut oleh EVERY DIVE .",
   keywords: [
     "freediving",
     "kursus freediving",
     "peralatan freediving",
     "sewa peralatan selam",
     "komunitas freediving",
-    "Blue Abyss Club",
+    "EVERY DIVE ",
     "AIDA",
     "fundive",
   ],
-  authors: [{ name: "Blue Abyss Club" }],
+  authors: [{ name: "EVERY DIVE " }],
   openGraph: {
-    title: "BLUE ABYSS CLUB — Laut Memanggilmu",
+    title: "EVERY DIVE  — Laut Memanggilmu",
     description:
       "Belajar freediving, temukan peralatanmu, dan bergabung dengan komunitas yang hidup untuk laut.",
-    siteName: "Blue Abyss Club",
+    siteName: "EVERY DIVE ",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BLUE ABYSS CLUB — Laut Memanggilmu",
+    title: "EVERY DIVE  — Laut Memanggilmu",
     description:
       "Belajar freediving, temukan peralatanmu, dan bergabung dengan komunitas yang hidup untuk laut.",
   },

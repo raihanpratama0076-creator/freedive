@@ -13,13 +13,13 @@ function Logo({ compact = false }: { compact?: boolean }) {
     <Link
       href="#home"
       className="group flex items-center gap-2.5"
-      aria-label="Blue Abyss Club — kembali ke atas"
+      aria-label="EVERY DIVE  — kembali ke atas"
     >
       <span className="flex items-center gap-1.5 transition-transform duration-300 group-hover:scale-105">
         <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-lagoon-300/40 bg-abyss-900">
           <Image
             src="/images/photos/f_1.png"
-            alt="Blue Abyss Club logo"
+            alt="EVERY DIVE  logo"
             fill
             sizes="36px"
             className="object-cover"
@@ -38,11 +38,10 @@ function Logo({ compact = false }: { compact?: boolean }) {
       </span>
       <span className="font-display leading-none">
         <span
-          className={`block font-bold tracking-[0.22em] text-foam-50 transition-all duration-300 ${
-            compact ? "text-sm" : "text-[15px]"
-          }`}
+          className={`block font-bold tracking-[0.22em] text-foam-50 transition-all duration-300 ${compact ? "text-sm" : "text-[15px]"
+            }`}
         >
-          BLUE ABYSS
+          EVERY DIVE
         </span>
         <span className="mt-1 block text-[9px] font-semibold tracking-[0.5em] text-lagoon-300/90">
           FREEDIVING · BAC
@@ -102,11 +101,10 @@ export function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.21, 0.65, 0.26, 0.99], delay: 0.2 }}
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "border-b border-foam-50/10 bg-abyss-950/85 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(2,10,18,0.8)]"
-            : "border-b border-transparent bg-gradient-to-b from-abyss-950/60 to-transparent"
-        }`}
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled
+          ? "border-b border-foam-50/10 bg-abyss-950/85 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(2,10,18,0.8)]"
+          : "border-b border-transparent bg-gradient-to-b from-abyss-950/60 to-transparent"
+          }`}
       >
         <nav
           className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-5 lg:px-8"
@@ -122,11 +120,10 @@ export function Navbar() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className={`relative rounded-full px-3.5 py-2 text-[13px] font-semibold tracking-wide transition-colors duration-300 ${
-                      isActive
-                        ? "text-lagoon-300"
-                        : "text-foam-100/75 hover:text-foam-50"
-                    }`}
+                    className={`relative rounded-full px-3.5 py-2 text-[13px] font-semibold tracking-wide transition-colors duration-300 ${isActive
+                      ? "text-lagoon-300"
+                      : "text-foam-100/75 hover:text-foam-50"
+                      }`}
                   >
                     {link.label}
                     {isActive && (

@@ -22,11 +22,10 @@ function FaqItem({
   return (
     <motion.div
       variants={fadeUp}
-      className={`overflow-hidden rounded-2xl border transition-colors duration-300 ${
-        open
+      className={`overflow-hidden rounded-2xl border transition-colors duration-300 ${open
           ? "border-lagoon-300/30 bg-abyss-850/80"
           : "border-foam-50/10 bg-abyss-850/40 hover:border-foam-50/20"
-      }`}
+        }`}
     >
       <button
         onClick={onToggle}
@@ -35,20 +34,18 @@ function FaqItem({
         className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
       >
         <span
-          className={`font-display text-[15px] font-bold leading-snug transition-colors duration-300 sm:text-base ${
-            open ? "text-lagoon-300" : "text-foam-50"
-          }`}
+          className={`font-display text-[15px] font-bold leading-snug transition-colors duration-300 sm:text-base ${open ? "text-lagoon-300" : "text-foam-50"
+            }`}
         >
           {faq.question}
         </span>
         <motion.span
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.3, ease: EASE_OUT }}
-          className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border transition-colors duration-300 ${
-            open
+          className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border transition-colors duration-300 ${open
               ? "border-lagoon-300/50 bg-lagoon-400/15 text-lagoon-300"
               : "border-foam-50/15 text-foam-100/60"
-          }`}
+            }`}
         >
           <Plus className="h-4 w-4" />
         </motion.span>
@@ -78,7 +75,7 @@ export function FaqSection() {
   const talkToTeam = () => {
     toast.success("Tim kami siap membantu — demo", {
       description:
-        "Di website operasional, tombol ini akan membuka obrolan langsung dengan kru BAC. Untuk saat ini, kirimkan email ke hello@blueabyss.club dan tim kami akan membalas dalam 1 hari.",
+        "Di website operasional, tombol ini akan membuka obrolan langsung dengan kru BAC. Untuk saat ini, kirimkan email ke hello@blueabyss. dan tim kami akan membalas dalam 1 hari.",
     });
   };
 

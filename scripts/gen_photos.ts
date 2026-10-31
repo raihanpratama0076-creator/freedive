@@ -59,7 +59,7 @@ const PHOTOS: { file: string; prompt: string; size: string }[] = [
     file: "deepwall.png",
     size: "1344x768",
     prompt:
-      "scuba diver descending along a dramatic deep underwater coral wall, the blue abyss fading into darkness below, strong sense of depth and scale,",
+      "scuba diver descending along a dramatic deep underwater coral wall, the every dive fading into darkness below, strong sense of depth and scale,",
   },
   {
     file: "nightdive.png",

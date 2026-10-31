@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ============ BLUE ABYSS CLUB — OCEAN DESIGN TOKENS ============ */
+/* ============ EVERY DIVE  — OCEAN DESIGN TOKENS ============ */
 
 @theme inline {
   --color-background: var(--background);
@@ -131,33 +131,41 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
   }
+
   body {
     @apply bg-abyss-950 text-foam-50 font-body antialiased;
     overflow-x: hidden;
   }
+
   ::selection {
     background: color-mix(in oklab, var(--color-lagoon-400) 75%, transparent);
     color: var(--color-abyss-950);
   }
+
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
+
   ::-webkit-scrollbar-track {
     background: var(--color-abyss-950);
   }
+
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(var(--color-abyss-700), var(--color-ocean-600));
     border-radius: 8px;
     border: 2px solid var(--color-abyss-950);
   }
+
   ::-webkit-scrollbar-thumb:hover {
     background: var(--color-ocean-500);
   }
+
   img {
     @apply select-none;
   }
@@ -166,48 +174,117 @@
 /* ============ KEYFRAMES ============ */
 
 @keyframes float-slow {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-  50% { transform: translate3d(0, -14px, 0) rotate(1.5deg); }
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(1.5deg);
+  }
 }
 
 @keyframes caustics-pan {
-  0% { transform: translate3d(-4%, -2%, 0) scale(1.15) rotate(0.001deg); opacity: 0.55; }
-  50% { opacity: 0.85; }
-  100% { transform: translate3d(4%, 3%, 0) scale(1.25) rotate(0.001deg); opacity: 0.55; }
+  0% {
+    transform: translate3d(-4%, -2%, 0) scale(1.15) rotate(0.001deg);
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: translate3d(4%, 3%, 0) scale(1.25) rotate(0.001deg);
+    opacity: 0.55;
+  }
 }
 
 @keyframes bubble-rise {
-  0% { transform: translate3d(0, 0, 0) scale(0.6); opacity: 0; }
-  8% { opacity: var(--bubble-opacity, 0.5); }
-  92% { opacity: var(--bubble-opacity, 0.5); }
-  100% { transform: translate3d(var(--bubble-sway, 24px), -105vh, 0) scale(1.15); opacity: 0; }
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: var(--bubble-opacity, 0.5);
+  }
+
+  92% {
+    opacity: var(--bubble-opacity, 0.5);
+  }
+
+  100% {
+    transform: translate3d(var(--bubble-sway, 24px), -105vh, 0) scale(1.15);
+    opacity: 0;
+  }
 }
 
 @keyframes bubble-sway {
-  0%, 100% { transform: translateX(calc(var(--bubble-sway, 24px) * -0.5)); }
-  50% { transform: translateX(calc(var(--bubble-sway, 24px) * 0.5)); }
+
+  0%,
+  100% {
+    transform: translateX(calc(var(--bubble-sway, 24px) * -0.5));
+  }
+
+  50% {
+    transform: translateX(calc(var(--bubble-sway, 24px) * 0.5));
+  }
 }
 
 @keyframes scroll-dot {
-  0% { transform: translateY(0); opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { transform: translateY(26px); opacity: 0; }
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(26px);
+    opacity: 0;
+  }
 }
 
 @keyframes pulse-soft {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes gradient-pan {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* ============ UTILITIES ============ */
@@ -231,6 +308,7 @@
 @utility no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -239,6 +317,7 @@
 /* Underwater haze veil layered over photos */
 @utility img-haze {
   position: relative;
+
   &::after {
     content: "";
     position: absolute;
@@ -253,6 +332,7 @@
 /* Subtle film grain for depth on dark sections */
 @utility grain {
   position: relative;
+
   &::before {
     content: "";
     position: absolute;
@@ -279,6 +359,7 @@
 
 /* Reduced motion — kill decorative animations globally */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

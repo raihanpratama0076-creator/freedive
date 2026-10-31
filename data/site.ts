@@ -16,7 +16,7 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const CONTACT = {
-  email: "hello@blueabyss.club",
+  email: "hello@blueabyss.",
   phone: "+62 812 0000 8888",
   address: "Jl. Pantai Selatan 08, Blue Harbor, Indonesia",
   whatsapp: "+62 812 0000 8888",

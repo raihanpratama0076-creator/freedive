@@ -97,7 +97,7 @@ function JoinDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
             ) : (
               <>
                 <h3 className="font-display text-2xl font-bold text-foam-50">
-                  Bergabung dengan Blue Abyss Club
+                  Bergabung dengan EVERY DIVE
                 </h3>
                 <p className="mt-1.5 text-sm text-foam-100/65">
                   Keanggotaan gratis. Kumpul bulanan, potongan harga trip, aksi konservasi, dan rekan menyelam yang selalu siap mendampingi.
@@ -156,7 +156,7 @@ export function CommunitySection() {
     <section
       id="community"
       className="grain relative overflow-hidden bg-abyss-900 py-24 sm:py-32"
-      aria-label="Komunitas Blue Abyss Club"
+      aria-label="Komunitas EVERY DIVE "
     >
       <div className="absolute inset-0 bg-gradient-to-b from-abyss-950 via-abyss-900 to-abyss-950" />
       <Bubbles count={9} seed={55} className="opacity-50" />
@@ -168,7 +168,7 @@ export function CommunitySection() {
             <Reveal>
               <p className="mb-4 flex items-center gap-3 text-[11px] font-bold tracking-[0.42em] text-lagoon-300">
                 <span className="h-px w-10 bg-lagoon-300/70" />
-                BLUE ABYSS CLUB
+                EVERY DIVE
               </p>
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-tight text-foam-50 sm:text-5xl">
                 Lebih dari
@@ -188,7 +188,7 @@ export function CommunitySection() {
                 untukmu.
               </p>
               <p>
-                Kini, Blue Abyss Club adalah rumah bagi para pemula yang melatih
+                Kini, EVERY DIVE  adalah rumah bagi para pemula yang melatih
                 napas pertama mereka di dalam air hingga freediver berpengalaman
                 yang menjelajahi kedalaman baru. Yang menyatukan kami sederhana:
                 kami menjelajah dengan penuh tanggung jawab, saling menjaga

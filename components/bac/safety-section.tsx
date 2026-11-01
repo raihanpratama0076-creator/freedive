@@ -183,11 +183,11 @@ export function SafetySection() {
               />
             </div>
             <motion.div
-              initial={{ opacity: 0, y: 20, x: "-50%" }}
-              whileInView={{ opacity: 1, y: 0, x: "-50%" }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="glass-subtle absolute -bottom-6 left-1/2 flex w-[88%] max-w-sm -translate-x-1/2 items-center gap-3 rounded-2xl p-4 shadow-2xl"
+              className="glass-subtle relative mt-3 flex w-full items-center gap-3 rounded-2xl p-4 shadow-2xl lg:absolute lg:-bottom-6 lg:left-[6%] lg:mt-0 lg:w-[88%] lg:max-w-sm"
             >
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-lagoon-400/15 text-lagoon-300">
                 <ShieldCheck className="h-5 w-5" />

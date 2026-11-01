@@ -4,9 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Heart, Users, X } from "lucide-react";
-import { STATS } from "@/data/site";
 import { COMMUNITY_PHOTOS, PHOTOS } from "@/data/images";
-import { StatCounter } from "@/components/ocean/stat-counter";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ocean/reveal";
 import { fadeUp, staggerParent } from "@/lib/motion";
 import { toast } from "sonner";
@@ -268,30 +266,6 @@ export function CommunitySection() {
             <div className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 rounded-full bg-ocean-500/15 blur-[100px]" />
           </div>
         </div>
-
-        {/* Stats */}
-        <RevealGroup
-          className="mt-24 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-foam-50/10 bg-foam-50/5 lg:grid-cols-4"
-          variants={staggerParent(0.08)}
-        >
-          {STATS.map((stat) => (
-            <RevealItem
-              key={stat.label}
-              className="bg-abyss-900/90 px-6 py-8 text-center"
-            >
-              <p className="font-display text-4xl font-bold text-lagoon-300 sm:text-5xl">
-                <StatCounter
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  decimals={stat.decimals ?? 0}
-                />
-              </p>
-              <p className="mt-2 text-[11px] font-bold tracking-[0.22em] text-foam-100/55">
-                {stat.label.toUpperCase()}
-              </p>
-            </RevealItem>
-          ))}
-        </RevealGroup>
 
         {/* CTA */}
         <Reveal className="relative mt-24 overflow-hidden rounded-[2.5rem]">

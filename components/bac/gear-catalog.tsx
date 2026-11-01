@@ -217,31 +217,31 @@ function ProductDetailModal({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.96, y: 16 }}
         transition={{ duration: 0.35, ease: [0.21, 0.65, 0.26, 0.99] }}
-        className="fixed inset-x-4 top-1/2 z-[90] mx-auto max-w-xl -translate-y-1/2 overflow-hidden rounded-3xl border border-foam-50/15 bg-abyss-900 shadow-2xl"
+        className="fixed inset-x-4 top-1/2 z-[90] mx-auto w-[calc(100%-1.5rem)] max-w-[24rem] -translate-y-1/2 overflow-hidden rounded-2xl border border-foam-50/15 bg-abyss-900 shadow-[0_20px_60px_-20px_rgba(2,10,18,0.9)] max-h-[76vh] overflow-y-auto"
         role="dialog"
         aria-modal="true"
         aria-label={`Detail produk: ${product.name}`}
       >
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 z-20 grid h-10 w-10 place-items-center rounded-full bg-abyss-950/70 text-foam-50 backdrop-blur transition-colors hover:bg-abyss-950"
+          className="absolute right-4 top-4 z-20 hidden h-10 w-10 place-items-center rounded-full bg-abyss-950/70 text-foam-50 backdrop-blur transition-colors hover:bg-abyss-950 sm:grid"
           aria-label="Tutup detail produk"
         >
           <X className="h-5 w-5" />
         </button>
 
-        <div className="relative aspect-[16/10] overflow-hidden bg-abyss-850 p-6">
+        <div className="relative aspect-[16/9] overflow-hidden bg-abyss-850 p-4">
           <Image
             src={product.image}
             alt={product.imageAlt}
             fill
-            sizes="600px"
-            className="object-contain p-6"
+            sizes="480px"
+            className="object-contain p-4"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-abyss-900 via-transparent to-transparent" />
-          <div className="absolute left-6 top-6 flex items-center gap-2">
+          <div className="absolute left-4 top-4 flex items-center gap-2">
             <span
-              className={`rounded-full px-3 py-1 text-[11px] font-bold tracking-wider ${
+              className={`rounded-full px-2.5 py-1 text-[10px] font-bold tracking-wider ${
                 product.level === "Beginner"
                   ? "bg-lagoon-400 text-abyss-950"
                   : "bg-coral-500 text-white"
@@ -249,19 +249,14 @@ function ProductDetailModal({
             >
               {product.level === "Beginner" ? "PEMULA" : "LANJUT"}
             </span>
-            <span className="rounded-full bg-abyss-950/80 px-2.5 py-1 text-[11px] font-semibold text-foam-100/80 backdrop-blur">
+            <span className="rounded-full bg-abyss-950/80 px-2 py-1 text-[10px] font-semibold text-foam-100/80 backdrop-blur">
               {product.category}
             </span>
           </div>
-          <div className="absolute right-16 top-6 flex items-center gap-1 rounded-full bg-abyss-950/80 px-2.5 py-1 text-xs font-bold text-foam-50 backdrop-blur">
-            <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-            {product.rating.toFixed(1)}
-            <span className="text-foam-100/50">({product.reviews})</span>
-          </div>
         </div>
 
-        <div className="p-6 sm:p-7">
-          <h3 className="font-display text-2xl font-bold text-foam-50">
+        <div className="p-4 sm:p-5">
+          <h3 className="font-display text-xl font-bold text-foam-50">
             {product.name}
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-foam-100/75">
@@ -270,68 +265,76 @@ function ProductDetailModal({
 
           {/* Pricing mode selection */}
           {canRent ? (
-            <div className="mt-5 grid grid-cols-2 gap-2 rounded-2xl border border-foam-50/10 bg-abyss-850/80 p-1.5">
+            <div className="mt-4 grid grid-cols-2 gap-2 rounded-2xl border border-foam-50/10 bg-abyss-850/80 p-1.5">
               <button
                 onClick={() => setMode("buy")}
                 aria-pressed={mode === "buy"}
-                className={`rounded-xl px-4 py-3 text-left transition-all ${
+                className={`rounded-xl px-3 py-2.5 text-left transition-all ${
                   mode === "buy"
                     ? "bg-abyss-950 ring-1 ring-lagoon-300/40"
                     : "hover:bg-abyss-950/50 text-foam-100/60"
                 }`}
               >
-                <span className="block text-[10px] font-bold tracking-wider text-foam-100/50">
-                  BELI (MILIK SENDIRI)
+                <span className="block text-[9px] font-bold tracking-wider text-foam-100/50">
+                  BELI
                 </span>
-                <span className="mt-0.5 block font-display text-lg font-bold text-lagoon-300">
+                <span className="mt-0.5 block font-display text-base font-bold text-lagoon-300">
                   {formatIDR(product.buyPrice)}
                 </span>
               </button>
               <button
                 onClick={() => setMode("rent")}
                 aria-pressed={mode === "rent"}
-                className={`rounded-xl px-4 py-3 text-left transition-all ${
+                className={`rounded-xl px-3 py-2.5 text-left transition-all ${
                   mode === "rent"
                     ? "bg-abyss-950 ring-1 ring-lagoon-300/40"
                     : "hover:bg-abyss-950/50 text-foam-100/60"
                 }`}
               >
-                <span className="block text-[10px] font-bold tracking-wider text-foam-100/50">
-                  SEWA (HARIAN)
+                <span className="block text-[9px] font-bold tracking-wider text-foam-100/50">
+                  SEWA
                 </span>
-                <span className="mt-0.5 block font-display text-lg font-bold text-reef-300">
+                <span className="mt-0.5 block font-display text-base font-bold text-reef-300">
                   {formatIDR(product.rentPricePerDay ?? 0)}
-                  <span className="text-xs text-foam-100/50 font-normal"> /hari</span>
+                  <span className="text-[10px] text-foam-100/50 font-normal">/hari</span>
                 </span>
               </button>
             </div>
           ) : (
-            <div className="mt-5 rounded-2xl border border-foam-50/10 bg-abyss-850/80 p-4 flex items-center justify-between">
-              <span className="text-xs font-bold tracking-wider text-foam-100/60">
-                HARGA PEMBELIAN
+            <div className="mt-4 rounded-2xl border border-foam-50/10 bg-abyss-850/80 p-3 flex items-center justify-between">
+              <span className="text-[10px] font-bold tracking-wider text-foam-100/60">
+                HARGA
               </span>
-              <span className="font-display text-xl font-bold text-lagoon-300">
+              <span className="font-display text-lg font-bold text-lagoon-300">
                 {formatIDR(product.buyPrice)}
               </span>
             </div>
           )}
 
-          <div className="mt-4 flex items-center justify-between text-xs text-foam-100/50 px-1">
+          <div className="mt-3 flex items-center justify-between text-[10px] text-foam-100/50 px-1">
             <span>
               {product.rentStock > 0
                 ? `${product.rentStock} unit sewa siap`
                 : `${product.buyStock} unit stok`}
             </span>
-            <span>Garansi resmi & verifikasi kru BAC</span>
+            <span>Garansi resmi</span>
           </div>
 
-          <button
-            onClick={handleAdd}
-            className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-lagoon-400 py-3.5 text-sm font-bold text-abyss-950 transition-all hover:bg-lagoon-300 hover:shadow-[0_0_28px_-6px_rgba(45,217,199,0.6)]"
-          >
-            <ShoppingCart className="h-4 w-4" />
-            Tambah ke Keranjang
-          </button>
+          <div className="mt-4 space-y-2">
+            <button
+              onClick={handleAdd}
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-lagoon-400 py-3 text-sm font-bold text-abyss-950 transition-all hover:bg-lagoon-300 hover:shadow-[0_0_22px_-6px_rgba(45,217,199,0.6)]"
+            >
+              <ShoppingCart className="h-4 w-4" />
+              Tambah ke Keranjang
+            </button>
+            <button
+              onClick={onClose}
+              className="flex w-full items-center justify-center rounded-full border border-foam-50/10 bg-abyss-850 py-2.5 text-sm font-semibold text-foam-50 transition-all hover:bg-abyss-800"
+            >
+              Tutup
+            </button>
+          </div>
         </div>
       </motion.div>
     </AnimatePresence>

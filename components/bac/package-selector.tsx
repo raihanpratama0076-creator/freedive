@@ -42,12 +42,12 @@ function PackageDialog({
             initial={{ opacity: 0, scale: 0.96, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.97, y: 20 }}
-            className="fixed inset-x-4 top-1/2 z-[90] mx-auto max-w-xl -translate-y-1/2 overflow-hidden rounded-3xl border border-foam-50/12 bg-abyss-900"
+            className="fixed inset-x-4 top-1/2 z-[90] mx-auto w-[calc(100%-2rem)] max-w-[28rem] -translate-y-1/2 overflow-hidden rounded-3xl border border-foam-50/12 bg-abyss-900 shadow-[0_30px_80px_-20px_rgba(8,18,24,0.9)] max-h-[76vh] overflow-y-auto sm:max-w-[27rem]"
             role="dialog"
             aria-modal="true"
             aria-label={`Detail paket: ${pkg.name}`}
           >
-            <div className="relative h-52">
+            <div className="relative h-28 sm:h-36">
               <Image
                 src={pkg.image}
                 alt={pkg.imageAlt}
@@ -58,7 +58,7 @@ function PackageDialog({
               <div className="absolute inset-0 bg-gradient-to-t from-abyss-900 via-abyss-900/25 to-transparent" />
               <button
                 onClick={onClose}
-                className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-abyss-950/60 text-foam-50 backdrop-blur transition-colors hover:bg-abyss-950/95"
+                className="absolute right-4 top-4 hidden h-9 w-9 place-items-center rounded-full bg-abyss-950/60 text-foam-50 backdrop-blur transition-colors hover:bg-abyss-950/95 sm:grid"
                 aria-label="Tutup detail paket"
               >
                 <X className="h-4.5 w-4.5" />
@@ -72,14 +72,22 @@ function PackageDialog({
                 </h3>
               </div>
             </div>
-            <div className="px-6 py-6">
+            <div className="px-4 py-4 sm:px-6 sm:py-6">
+              <div className="mb-3 sm:hidden">
+                <p className="text-[9px] font-bold tracking-[0.26em] text-lagoon-300">
+                  {pkg.level === "Beginner" ? "PAKET PEMULA" : "PAKET LANJUTAN"}
+                </p>
+                <h3 className="mt-1 font-display text-2xl font-bold text-foam-50">
+                  {pkg.name}
+                </h3>
+              </div>
               <p className="text-sm leading-relaxed text-foam-100/75">
                 {pkg.description}
               </p>
-              <h4 className="mt-5 text-[11px] font-bold tracking-[0.24em] text-lagoon-300">
+              <h4 className="mt-3 text-[10px] font-bold tracking-[0.24em] text-lagoon-300">
                 APA YANG TERMASUK
               </h4>
-              <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+              <ul className="mt-2 grid gap-2 sm:grid-cols-2">
                 {pkg.items.map((item) => (
                   <li
                     key={item}
@@ -91,7 +99,7 @@ function PackageDialog({
                 ))}
               </ul>
 
-              <div className="mt-5 grid grid-cols-2 gap-1.5 rounded-2xl border border-foam-50/10 bg-abyss-850 p-1.5">
+              <div className="mt-4 grid grid-cols-2 gap-1.5 rounded-2xl border border-foam-50/10 bg-abyss-850 p-1.5">
                 <button
                   onClick={() => setPicked("buy")}
                   aria-pressed={picked === "buy"}
@@ -129,37 +137,45 @@ function PackageDialog({
                   </span>
                 </button>
               </div>
-              <p className="mt-2 text-center text-[11px] text-foam-100/50">
+              <p className="mt-1.5 text-center text-[11px] text-foam-100/50">
                 {pkg.rentDurationNote} · {pkg.rentStock} kit tersedia untuk sewa
                 (data contoh)
               </p>
 
-              <button
-                onClick={() => {
-                  addItem({
-                    productId: pkg.id,
-                    name: pkg.name,
-                    image: pkg.image,
-                    category: "Package",
-                    mode: picked,
-                    unitPrice:
-                      picked === "rent" ? pkg.rentPricePerDay : pkg.buyPrice,
-                    quantity: 1,
-                  });
-                  onClose();
-                  toast.success(`${pkg.name} ditambahkan ke keranjang`, {
-                    description:
-                      picked === "rent"
-                        ? "Mode sewa — tentukan tanggalmu di keranjang."
-                        : "Mode beli — paket lengkap ini milikmu.",
-                    action: { label: "Lihat keranjang", onClick: () => setOpen(true) },
-                  });
-                }}
-                className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-lagoon-400 py-3.5 text-sm font-bold text-abyss-950 transition-all hover:bg-lagoon-300"
-              >
-                <ShoppingCart className="h-4 w-4" />
-                Tambah {picked === "rent" ? "Sewa" : "Beli"} ke Keranjang
-              </button>
+              <div className="mt-4 space-y-2">
+                <button
+                  onClick={() => {
+                    addItem({
+                      productId: pkg.id,
+                      name: pkg.name,
+                      image: pkg.image,
+                      category: "Package",
+                      mode: picked,
+                      unitPrice:
+                        picked === "rent" ? pkg.rentPricePerDay : pkg.buyPrice,
+                      quantity: 1,
+                    });
+                    onClose();
+                    toast.success(`${pkg.name} ditambahkan ke keranjang`, {
+                      description:
+                        picked === "rent"
+                          ? "Mode sewa — tentukan tanggalmu di keranjang."
+                          : "Mode beli — paket lengkap ini milikmu.",
+                      action: { label: "Lihat keranjang", onClick: () => setOpen(true) },
+                    });
+                  }}
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-lagoon-400 py-3.5 text-sm font-bold text-abyss-950 transition-all hover:bg-lagoon-300"
+                >
+                  <ShoppingCart className="h-4 w-4" />
+                  Tambah {picked === "rent" ? "Sewa" : "Beli"} ke Keranjang
+                </button>
+                <button
+                  onClick={onClose}
+                  className="flex w-full items-center justify-center rounded-full border border-foam-50/10 bg-abyss-850 py-3 text-sm font-semibold text-foam-50 transition-all hover:bg-abyss-800"
+                >
+                  Tutup
+                </button>
+              </div>
             </div>
           </motion.div>
         </>

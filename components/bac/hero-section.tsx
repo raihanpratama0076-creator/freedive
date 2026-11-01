@@ -114,13 +114,13 @@ export function HeroSection() {
             ? undefined
             : { y: contentY, opacity: contentOpacity }
         }
-        className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-28 pt-36 lg:px-8"
+        className="relative z-10 mx-auto w-full max-w-7xl px-3 pb-14 pt-16 sm:px-5 sm:pb-28 sm:pt-36 lg:px-8"
       >
         <motion.div
           initial="hidden"
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
-          className="max-w-3xl"
+          className="max-w-full sm:max-w-3xl"
         >
           {/* Eyebrow */}
           <motion.p
@@ -139,10 +139,11 @@ export function HeroSection() {
           </motion.p>
 
           {/* Heading */}
-          <h1 className="font-display text-[13.5vw] font-bold leading-[0.98] tracking-tight text-foam-50 sm:text-7xl lg:text-[86px]">
-            <AnimatedWords text="LAUT" offset={2} />
-            <br />
-            <span className="text-gradient-lagoon animate-[gradient-pan_7s_ease-in-out_infinite]">
+          <h1 className="font-display text-[12vw] font-bold leading-[0.8] tracking-[-0.07em] text-foam-50 sm:text-7xl lg:text-[86px]">
+            <span className="block sm:inline-block">
+              <AnimatedWords text="LAUT" offset={2} />
+            </span>
+            <span className="text-gradient-lagoon block sm:inline-block animate-[gradient-pan_7s_ease-in-out_infinite]">
               <AnimatedWords text="MEMANGGILMU." offset={4} />
             </span>
           </h1>
@@ -157,7 +158,7 @@ export function HeroSection() {
                 transition: { delay: 1.15, duration: 0.8 },
               },
             }}
-            className="mt-7 max-w-xl text-base leading-relaxed text-foam-100/80 sm:text-lg"
+            className="mt-4 max-w-[18rem] text-[14px] leading-relaxed text-foam-100/80 sm:mt-7 sm:max-w-xl sm:text-base lg:text-lg"
           >
             Jelajahi dunia yang hening di bawah permukaan. Belajar freediving, temukan
             peralatan yang tepat, dan jadilah bagian dari komunitas yang hidup untuk laut.
@@ -173,57 +174,24 @@ export function HeroSection() {
                 transition: { delay: 1.4, duration: 0.8 },
               },
             }}
-            className="mt-10 flex flex-wrap items-center gap-4"
+            className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center"
           >
             <Link
               href="#learn"
-              className="group inline-flex items-center gap-2.5 rounded-full bg-lagoon-400 px-7 py-4 text-sm font-bold text-abyss-950 transition-all duration-300 hover:bg-lagoon-300 hover:shadow-[0_0_40px_-8px_rgba(45,217,199,0.65)]"
+              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-lagoon-400 px-5 py-3.5 text-sm font-bold text-abyss-950 transition-all duration-300 hover:bg-lagoon-300 hover:shadow-[0_0_40px_-8px_rgba(45,217,199,0.65)] sm:w-auto sm:px-7 sm:py-4"
             >
               Jelajahi Kursus Freediving
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
               href="#gear"
-              className="inline-flex items-center gap-2.5 rounded-full border border-foam-50/25 px-7 py-4 text-sm font-bold text-foam-50 backdrop-blur-sm transition-all duration-300 hover:border-lagoon-300/60 hover:bg-foam-50/5 hover:text-lagoon-300"
+              className="inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-foam-50/25 px-5 py-3.5 text-sm font-bold text-foam-50 backdrop-blur-sm transition-all duration-300 hover:border-lagoon-300/60 hover:bg-foam-50/5 hover:text-lagoon-300 sm:w-auto sm:px-7 sm:py-4"
             >
               Lihat Peralatan
             </Link>
           </motion.div>
         </motion.div>
       </motion.div>
-
-      {/* Floating expedition card — depth accent */}
-      <motion.aside
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.8, duration: 1, ease: [0.21, 0.65, 0.26, 0.99] }}
-        style={reduced ? undefined : { y: midY }}
-        className="absolute bottom-28 right-5 z-10 hidden md:right-8 lg:block"
-      >
-        <div className="animate-float-slow glass-subtle w-72 rounded-2xl p-5 shadow-2xl shadow-abyss-950/60">
-          <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.28em] text-lagoon-300">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lagoon-400 opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-lagoon-400" />
-            </span>
-            ACARA BERIKUTNYA
-          </div>
-          <p className="mt-3 font-display text-lg font-bold leading-snug text-foam-50">
-            Reef Exploration Freediving
-          </p>
-          <p className="mt-1.5 flex items-center gap-1.5 text-xs text-foam-100/65">
-            <MapPin className="h-3.5 w-3.5 text-lagoon-300/80" />
-            Coral Gardens · 5–6 Des
-          </p>
-          <Link
-            href="#events"
-            className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-lagoon-300 transition-colors hover:text-lagoon-200"
-          >
-            Daftar sekarang
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-      </motion.aside>
 
       {/* Scroll indicator */}
       <motion.a
